@@ -1,0 +1,373 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+  background:
+    radial-gradient(circle at left 45%, #eadcff 0, transparent 18%),
+    radial-gradient(circle at right 35%, #dbeafe 0, transparent 20%),
+    linear-gradient(135deg, #f5f3ff, #eff6ff);
+  transition: 0.3s ease;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 22px;
+  padding: 35px;
+  box-shadow: 0 25px 70px rgba(79, 70, 229, 0.18);
+  transition: 0.3s ease;
+}
+
+.theme-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: auto;
+  padding: 10px 18px;
+  background: white;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #4f46e5;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #64748b;
+  margin-top: 5px;
+}
+
+.small-text {
+  text-align: center;
+  color: #64748b;
+  margin: 8px 0 25px;
+}
+
+.modes {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.mode {
+  width: auto;
+  padding: 11px 20px;
+  background: white;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mode.active {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+}
+
+.editor-box {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  gap: 20px;
+  padding: 25px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+}
+
+.panel h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #111827;
+  text-align: left;
+}
+
+.result-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copy-btn {
+  width: auto;
+  padding: 9px 14px;
+  background: white;
+  color: #4f46e5;
+  border: 1px solid #ddd6fe;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  height: 280px;
+  padding: 18px;
+  border: 1px solid #dbe1ea;
+  border-radius: 14px;
+  resize: none;
+  outline: none;
+  font-size: 16px;
+  line-height: 1.6;
+  background: white;
+  color: #111827;
+}
+
+small {
+  display: block;
+  margin-top: 10px;
+  color: #64748b;
+}
+
+.arrow {
+  width: 38px;
+  height: 38px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  color: #4f46e5;
+  box-shadow: 0 8px 20px rgba(79,70,229,0.18);
+}
+
+.main-btn {
+  display: block;
+  width: 360px;
+  margin: 25px auto 0;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.features {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 25px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f5f3ff, #eff6ff);
+  color: #475569;
+  font-size: 14px;
+}
+
+.features b {
+  color: #4f46e5;
+}
+
+/* DARK MODE */
+.app.dark {
+  background:
+    radial-gradient(circle at left 45%, rgba(124, 58, 237, 0.25), transparent 18%),
+    radial-gradient(circle at right 35%, rgba(59, 130, 246, 0.22), transparent 20%),
+    linear-gradient(135deg, #020617, #111827);
+}
+
+.app.dark .card {
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+.app.dark h1 {
+  color: #a78bfa;
+}
+
+.app.dark .subtitle,
+.app.dark .small-text,
+.app.dark small {
+  color: #cbd5e1;
+}
+
+.app.dark .editor-box {
+  border-color: #334155;
+}
+
+.app.dark .panel h3 {
+  color: #f8fafc;
+}
+
+.app.dark textarea,
+.app.dark .mode,
+.app.dark .copy-btn,
+.app.dark .theme-btn,
+.app.dark .arrow {
+  background: #1e293b;
+  color: #f8fafc;
+  border-color: #334155;
+}
+
+.app.dark textarea::placeholder {
+  color: #94a3b8;
+}
+
+.app.dark .features {
+  background: rgba(30, 41, 59, 0.85);
+  color: #cbd5e1;
+}
+
+.limit-box {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 16px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  text-align: center;
+}
+
+.limit-box h3 {
+  color: #ea580c;
+  margin-bottom: 8px;
+}
+
+.limit-box p {
+  color: #7c2d12;
+  margin-bottom: 15px;
+}
+
+.ad-btn {
+  width: auto;
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.app.dark .limit-box {
+  background: rgba(124, 45, 18, 0.25);
+  border-color: #9a3412;
+}
+
+.app.dark .limit-box h3 {
+  color: #fdba74;
+}
+
+.app.dark .limit-box p {
+  color: #fed7aa;
+}
+
+.app.dark .mode {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #334155;
+}
+
+.app.dark .mode:hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+.app.dark .mode.active {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: #ffffff;
+  border: 1px solid #a78bfa;
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.35);
+}
+
+.app.dark .mode.active:hover {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+}
+
+.ad-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.ad-card {
+  width: 100%;
+  max-width: 430px;
+  background: white;
+  border-radius: 22px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+}
+
+.ad-card h2 {
+  color: #4f46e5;
+  margin-bottom: 8px;
+}
+
+.ad-card h3 {
+  font-size: 36px;
+  color: #ea580c;
+  margin-top: 10px;
+}
+
+.unlocked-text {
+  color: #16a34a !important;
+  font-weight: 700;
+}
+
+.app.dark .ad-card {
+  background: #1e293b;
+  color: white;
+}
+
+@media (max-width: 850px) {
+  .editor-box {
+    grid-template-columns: 1fr;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+  }
+
+  .main-btn {
+    width: 100%;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  .ad-placeholder.leaderboard {
+    height: 100px;
+  }
+
+  .ad-placeholder.square {
+    width: 100%;
+    max-width: 300px;
+  }
+}
